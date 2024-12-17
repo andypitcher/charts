@@ -302,7 +302,9 @@ securityContext:
   runAsUser: 65534
 
 containerSecurityContext:
-  readOnlyRootFilesystem: true
+  seLinuxOptions:
+   type: prometheus_exporter_t
+  readOnlyRootFilesystem: false
   # capabilities:
   #   add:
   #   - SYS_TIME
